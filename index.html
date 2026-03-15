@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Siloperps – Trading Unlocked</title>
+  <title>SiloPerps – The Agentic Perpetual DEX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SiloPerps — the agentic perpetual DEX. Trade meme coin perpetuals with Agent DeREK, your AI co-pilot running in Molt Mode." />
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
@@ -109,7 +110,7 @@
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 30px;
       margin-top: 30px;
     }
@@ -177,6 +178,144 @@
       box-shadow: 0 16px 40px rgba(0,0,0,.7);
     }
 
+    /* Agent DeREK section */
+    .derek-section {
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .derek-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(255,217,119,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .derek-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,217,119,0.3);
+      background: rgba(255,217,119,0.08);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #ffd977;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .derek-badge .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.6); }
+      50% { box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+    }
+
+    .derek-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: #ffd977;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .derek-subtitle {
+      max-width: 600px;
+      margin: 0 auto 32px;
+      color: #e8d59a;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .derek-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 36px;
+      text-align: left;
+    }
+
+    .derek-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,217,119,0.12);
+      border-radius: 14px;
+      padding: 20px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .derek-card:hover {
+      border-color: rgba(255,217,119,0.35);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .derek-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .derek-card h4 {
+      color: #ffd977;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .derek-card p {
+      color: #cbbd8b;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    /* Molt Mode banner */
+    .molt-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,217,119,0.2);
+      background: linear-gradient(135deg, rgba(255,217,119,0.06), rgba(181,139,0,0.06));
+      margin-top: 8px;
+    }
+
+    .molt-banner .molt-icon {
+      font-size: 1.3rem;
+    }
+
+    .molt-banner .molt-text {
+      text-align: left;
+    }
+
+    .molt-banner .molt-text strong {
+      display: block;
+      color: #ffd977;
+      font-size: 0.9rem;
+    }
+
+    .molt-banner .molt-text span {
+      color: #bfae7a;
+      font-size: 0.78rem;
+    }
+
+    /* Neural network canvas */
+    #neural-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
     /* Falling logo background */
     .rain {
       position: fixed;
@@ -199,42 +338,94 @@
       }
     }
 
+    /* Hero badge */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(74,222,128,0.3);
+      background: rgba(74,222,128,0.08);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #4ade80;
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
     footer {
       padding: 50px 20px;
       text-align: center;
       color: #8c7a45;
       font-size: 0.8rem;
     }
+
+    footer a {
+      color: #bfae7a;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffd977;
+    }
+
+    /* Flow divider */
+    .flow-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ffd977, transparent);
+      margin: 0 auto 20px;
+      border-radius: 2px;
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- Neural network background -->
+  <canvas id="neural-bg"></canvas>
+
   <!-- Falling logos -->
   <div class="rain" id="rain"></div>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <img src="logo.png" class="hero-logo" alt="Siloperps Logo" />
+      <img src="logo.png" class="hero-logo" alt="SiloPerps Logo" />
 
-      <h1>Trading Unlocked for Everyone</h1>
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        Agent DeREK Online
+      </div>
+
+      <h1>The Agentic Perpetual DEX</h1>
 
       <p class="lead">
-        A next-generation decentralized exchange for perpetual futures.
-        Wallet-based identity, AI-powered market analysis, public trade chats,
-        and real-time execution — fully on-chain.
+        Trade meme coin perpetuals with your AI co-pilot.
+        Agent DeREK runs natively inside SiloPerps in <strong>Molt Mode</strong> —
+        scanning markets, managing risk, and executing trades 24/7,
+        fully on-chain and non-custodial.
       </p>
 
       <div class="buttons">
-        <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">
+        <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank" rel="noopener noreferrer">
           LAUNCH APP
         </a>
       </div>
 
       <div class="buttons">
-        <a href="https://x.com/PerpsSilo" class="btn secondary capitalize" target="_blank">Follow on X</a>
-        <a href="https://t.me/PerpsSilo" class="btn secondary capitalize" target="_blank">Join Telegram</a>
-        <a href="https://medium.com/@PerpsSilo/siloperps-the-meme-perpetual-dex-959565b72712" class="btn secondary capitalize" target="_blank">Whitepaper</a>
+        <a href="https://x.com/PerpsSilo" class="btn secondary capitalize" target="_blank" rel="noopener noreferrer">Follow on X</a>
+        <a href="https://t.me/PerpsSilo" class="btn secondary capitalize" target="_blank" rel="noopener noreferrer">Join Telegram</a>
+        <a href="https://medium.com/@PerpsSilo/siloperps-the-meme-perpetual-dex-959565b72712" class="btn secondary capitalize" target="_blank" rel="noopener noreferrer">Whitepaper</a>
       </div>
 
       <div class="hero-stage">
@@ -245,35 +436,87 @@
         <div class="stat"><h3>10M+</h3><p class="capitalize">Volume</p></div>
         <div class="stat"><h3>500+</h3><p class="capitalize">Traders</p></div>
         <div class="stat"><h3>Live</h3><p class="capitalize">On Mainnet</p></div>
+        <div class="stat"><h3>24/7</h3><p class="capitalize">Agent Uptime</p></div>
       </div>
     </div>
   </section>
 
+  <!-- Tagline -->
   <section>
     <div class="container">
-      <div class="tagline">Less UI. More Siloperps.</div>
+      <div class="tagline">Less UI. More Agents. Pure SiloPerps.</div>
     </div>
   </section>
 
+  <!-- Agent DeREK Section -->
+  <section class="derek-section">
+    <div class="container">
+      <div class="derek-badge">
+        <span class="pulse-dot"></span>
+        Native Trading Agent
+      </div>
+
+      <h2 class="derek-title">Meet Agent DeREK</h2>
+      <p class="derek-subtitle">
+        Your AI trading co-pilot, built into SiloPerps. DeREK autonomously scans on-chain data,
+        social signals, and market microstructure — then executes with precision while you sleep.
+      </p>
+
+      <div class="derek-grid">
+        <div class="derek-card">
+          <div class="derek-card-icon">🧠</div>
+          <h4>Market Intelligence</h4>
+          <p>Scans X feeds, on-chain volume, and holder distribution to detect emerging meme coins before they trend.</p>
+        </div>
+        <div class="derek-card">
+          <div class="derek-card-icon">⚡</div>
+          <h4>Autonomous Execution</h4>
+          <p>Places and manages perpetual trades with configurable leverage, stop-losses, and trailing exits — no manual intervention needed.</p>
+        </div>
+        <div class="derek-card">
+          <div class="derek-card-icon">🛡️</div>
+          <h4>Risk Management</h4>
+          <p>Real-time confidence scoring from 0–100%, rug detection signals, and liquidity analysis keep your capital protected.</p>
+        </div>
+        <div class="derek-card">
+          <div class="derek-card-icon">🔄</div>
+          <h4>Molt Mode</h4>
+          <p>DeREK's adaptive engine — evolves strategies in response to shifting market regimes, backtests before going live, and optimizes autonomously.</p>
+        </div>
+      </div>
+
+      <div class="molt-banner">
+        <span class="molt-icon">🦎</span>
+        <div class="molt-text">
+          <strong>Powered by Molt.Trade</strong>
+          <span>Open-source AI agent infrastructure for Solana, Base &amp; SiloPerps perpetuals</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Features -->
   <section>
     <div class="container">
+      <div class="flow-divider"></div>
       <div class="features">
         <div class="card">
-          <h4 class="capitalize">Cex-grade UX</h4>
-          <p>Lightning-fast interface with professional trading tools.</p>
+          <h4 class="capitalize">CEX-Grade UX</h4>
+          <p>Lightning-fast interface with professional trading tools and one-click agent deployment.</p>
         </div>
         <div class="card">
           <h4 class="capitalize">DeFi Security</h4>
-          <p>Non-custodial, transparent, and fully on-chain.</p>
+          <p>Non-custodial, transparent, and fully on-chain. Your keys, your trades, your agent.</p>
         </div>
         <div class="card">
-          <h4 class="capitalize">AI Insights</h4>
-          <p>Smart analysis to help you spot opportunities faster.</p>
+          <h4 class="capitalize">Agentic Trading</h4>
+          <p>Deploy Agent DeREK in Molt Mode — AI-driven analysis and execution running natively inside the DEX.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Trading Tools -->
   <section>
     <div class="container">
       <h2 style="font-size:2rem;margin-bottom:30px;">
@@ -284,45 +527,114 @@
       <div class="card-row">
         <div class="tool-card">🇪🇺</div>
         <div class="tool-card">🪙</div>
-        <div class="tool-card">S&P</div>
-        <div class="tool-card"></div>
+        <div class="tool-card">S&amp;P</div>
+        <div class="tool-card"></div>
         <div class="tool-card">Ξ</div>
         <div class="tool-card">₿</div>
       </div>
 
       <div class="buttons" style="margin-top:40px;">
-        <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn capitalize" target="_blank">
+        <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn capitalize" target="_blank" rel="noopener noreferrer">
           Start Trading
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    © 2026 SiloPerps. All Rights Reserved.
+    <p>&copy; 2026 SiloPerps. All Rights Reserved.</p>
+    <p style="margin-top:8px;">
+      <a href="https://github.com/SiloPerpetual-DEX/molt.trade" target="_blank" rel="noopener noreferrer">Molt.Trade</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://x.com/PerpsSilo" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://t.me/PerpsSilo" target="_blank" rel="noopener noreferrer">Telegram</a>
+    </p>
   </footer>
 
   <script>
-    const rain = document.getElementById("rain");
-    const LOGO_SRC = "logo.png";
+    /* Neural network background */
+    (function() {
+      var canvas = document.getElementById("neural-bg");
+      var ctx = canvas.getContext("2d");
+      var nodes = [];
+      var NODE_COUNT = 40;
+      var MAX_DIST = 160;
 
-    function createDrop() {
-      const img = document.createElement("img");
-      img.src = LOGO_SRC;
-      img.className = "drop";
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resize();
+      window.addEventListener("resize", resize);
 
-      const size = Math.random() * 26 + 16;
-      img.style.width = size + "px";
-      img.style.left = Math.random() * 100 + "vw";
+      for (var i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4
+        });
+      }
 
-      const duration = Math.random() * 10 + 8;
-      img.style.animationDuration = duration + "s";
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < nodes.length; i++) {
+          var a = nodes[i];
+          a.x += a.vx;
+          a.y += a.vy;
+          if (a.x < 0 || a.x > canvas.width) a.vx *= -1;
+          if (a.y < 0 || a.y > canvas.height) a.vy *= -1;
 
-      rain.appendChild(img);
-      setTimeout(() => img.remove(), duration * 1000);
-    }
+          for (var j = i + 1; j < nodes.length; j++) {
+            var b = nodes[j];
+            var dx = a.x - b.x;
+            var dy = a.y - b.y;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < MAX_DIST) {
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.strokeStyle = "rgba(255,217,119," + (0.08 * (1 - dist / MAX_DIST)) + ")";
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
 
-    setInterval(createDrop, 420);
+          ctx.beginPath();
+          ctx.arc(a.x, a.y, 1.5, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(255,217,119,0.25)";
+          ctx.fill();
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    /* Falling logo rain */
+    (function() {
+      var rain = document.getElementById("rain");
+      var LOGO_SRC = "logo.png";
+
+      function createDrop() {
+        var img = document.createElement("img");
+        img.src = LOGO_SRC;
+        img.className = "drop";
+
+        var size = Math.random() * 26 + 16;
+        img.style.width = size + "px";
+        img.style.left = Math.random() * 100 + "vw";
+
+        var duration = Math.random() * 10 + 8;
+        img.style.animationDuration = duration + "s";
+
+        rain.appendChild(img);
+        setTimeout(function() { img.remove(); }, duration * 1000);
+      }
+
+      setInterval(createDrop, 420);
+    })();
   </script>
 
 </body>
